@@ -1,7 +1,7 @@
 import React from 'react'
+import './Register.scss'
 
-export const HomeAboutUs = () => {
-
+export const Register = () => {
     return (
         <div>
 

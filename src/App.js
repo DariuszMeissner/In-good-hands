@@ -1,13 +1,21 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Home } from './containers/Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import './styles/_main.scss'
+import { Nav } from './components/Nav'
+import { Login, Register } from './components/Auth'
+import Home from './components/Home'
 
-export const App = () => {
+const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
+      <Nav />
       <Routes>
-        <Route exact to='/' element={Home} />
+        <Route path='/' element={<Home />} />
+        <Route path='/sign-in' element={<Login />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   )
 }
+
+export default App

@@ -1,7 +1,7 @@
 import React from 'react'
+import './Login.scss'
 
-export const HomeAboutUs = () => {
-
+export const Login = () => {
     return (
         <div>
 
