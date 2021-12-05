@@ -1,0 +1,22 @@
+.hero {
+  height: 70vh;
+  &__image {
+    height: 73vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    margin-left: -15%;
+  }
+  &__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
