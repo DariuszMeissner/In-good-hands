@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavMobileList } from '.'
+import { NavMobileView } from '.'
 import './NavMobile.scss'
 
 export const NavMobile = () => {
@@ -7,6 +7,7 @@ export const NavMobile = () => {
 
     return (
         <div>
+            <NavMobileView />
             {isOpen ? '' : ''}
         </div>
     )
