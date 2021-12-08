@@ -30,7 +30,6 @@ export const Nav = () => {
                     <NavMain />
                 </>
             )}
-
         </nav>
     )
 }
