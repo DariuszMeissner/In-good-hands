@@ -4,7 +4,7 @@ import './NavMobileView.scss'
 export const NavMobileView = () => {
     return (
         <div>
-
+            Menu
         </div>
     )
 }

@@ -6,16 +6,17 @@ export const Nav = () => {
 
     // Handle width size of screen
     const getWindowDimensions = () => {
-        const { innerWidth: width } = window;
+        let { innerWidth: width } = window;
+        width < 720 ? width = true : width = false
         return width
     }
 
-    // Set screen siez afetr loaded app
+    // Set screen size afetr loaded app
     const [isMobile, setIsMobile] = useState(getWindowDimensions());
 
-    
+
     useEffect(() => {
-        const handleResize = () => { setIsMobile(getWindowDimensions() < 720 ? true : false) }
+        const handleResize = () => { setIsMobile(getWindowDimensions()) }
 
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
@@ -25,8 +26,8 @@ export const Nav = () => {
         <nav>
             {isMobile ? <NavMobile /> : (
                 <>
-                    <NavMain />
                     <NavAuth />
+                    <NavMain />
                 </>
             )}
 
