@@ -23,7 +23,7 @@ export const Nav = () => {
     }, []);
 
     return (
-        <nav>
+        <nav className='flex flex-justify-end'>
             {isMobile ? <NavMobile /> : (
                 <>
                     <NavAuth />

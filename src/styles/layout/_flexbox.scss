@@ -1,0 +1,86 @@
+// Breakpoints
+$breakpoint-s: 300px;
+$breakpoint-m: 576px;
+$breakpoint-l: 768px;
+$breakpoint-xl: 1140px;
+
+// Map of brakpoints name
+$brekpointName: (
+  "": $breakpoint-s,
+  "-s": $breakpoint-s,
+  "-m": $breakpoint-m,
+  "-l": $breakpoint-l,
+  "-xl": $breakpoint-xl,
+);
+
+// loop display flex
+@each $name, $breakpoint in $brekpointName {
+  .flex#{$name} {
+    @media (min-width: $breakpoint) {
+      display: flex;
+    }
+  }
+}
+
+// loop justify-content: center
+@each $name, $breakpoint in $brekpointName {
+  .flex-justify-center#{$name} {
+    @media (min-width: $breakpoint) {
+      justify-content: center;
+    }
+  }
+}
+// loop justify-content: flex-start
+@each $name, $breakpoint in $brekpointName {
+  .flex-justify-start#{$name} {
+    @media (min-width: $breakpoint) {
+      justify-content: flex-start;
+    }
+  }
+}
+
+@each $name, $breakpoint in $brekpointName {
+  .flex-justify-end#{$name} {
+    @media (min-width: $breakpoint) {
+      justify-content: flex-end;
+    }
+  }
+}
+
+@each $name, $breakpoint in $brekpointName {
+  .flex-align-center#{$name} {
+    @media (min-width: $breakpoint) {
+      align-items: center;
+    }
+  }
+}
+@each $name, $breakpoint in $brekpointName {
+  .flex-align-start#{$name} {
+    @media (min-width: $breakpoint) {
+      align-items: flex-start;
+    }
+  }
+}
+@each $name, $breakpoint in $brekpointName {
+  .flex-align-end#{$name} {
+    @media (min-width: $breakpoint) {
+      align-items: flex-end;
+    }
+  }
+}
+
+@each $name, $breakpoint in $brekpointName {
+  .flex-direction-column#{$name} {
+    @media (min-width: $breakpoint) {
+      flex-direction: column;
+    }
+  }
+}
+
+@each $name, $breakpoint in $brekpointName {
+  .block#{$name} {
+    @media (min-width: $breakpoint) {
+      display: block;
+    }
+  }
+}
