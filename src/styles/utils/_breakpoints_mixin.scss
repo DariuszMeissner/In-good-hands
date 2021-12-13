@@ -1,5 +1,6 @@
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
+$breakpoint-s: 300px;
+$breakpoint-m: 576px;
+$breakpoint-l: 768px;
 $breakpoint-xl: 1140px;
 
 @mixin laptop {
@@ -8,12 +9,17 @@ $breakpoint-xl: 1140px;
   }
 }
 @mixin tablet {
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: $breakpoint-l) {
     @content;
   }
 }
 @mixin midmobile {
-  @media (min-width: $breakpoint-sm) {
+  @media (min-width: $breakpoint-m) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (min-width: $breakpoint-s) {
     @content;
   }
 }
