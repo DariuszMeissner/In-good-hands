@@ -1,0 +1,68 @@
+// Breakpoints
+$breakpoint-s: 300px;
+$breakpoint-m: 576px;
+$breakpoint-l: 768px;
+$breakpoint-xl: 1140px;
+
+// Map of brakpoints name
+$brekpointName: (
+  "": $breakpoint-s,
+  "-s": $breakpoint-s,
+  "-m": $breakpoint-m,
+  "-l": $breakpoint-l,
+  "-xl": $breakpoint-xl,
+);
+
+// Primary value
+$primarySpace: 4; // 4px
+$maxCount: 24;
+
+@for $i from 1 through $maxCount {
+  @each $name, $breakpoint in $brekpointName {
+    .p-#{$i}#{$name} {
+      @media (min-width: $breakpoint-md) {
+        padding: ($primarySpace * $i) px;
+      }
+    }
+  }
+}
+
+@for $i from 1 through $maxCount {
+  @each $name, $breakpoint in $brekpointName {
+    .p-l#{$i}#{$name} {
+      @media (min-width: $breakpoint-md) {
+        padding-left: ($primarySpace * $i) px;
+      }
+    }
+  }
+}
+
+@for $i from 1 through $maxCount {
+  @each $name, $breakpoint in $brekpointName {
+    .p-r#{$i}#{$name} {
+      @media (min-width: $breakpoint-md) {
+        padding-right: ($primarySpace * $i) px;
+      }
+    }
+  }
+}
+
+@for $i from 1 through $maxCount {
+  @each $name, $breakpoint in $brekpointName {
+    .p-t#{$i}#{$name} {
+      @media (min-width: $breakpoint-md) {
+        padding-top: ($primarySpace * $i) px;
+      }
+    }
+  }
+}
+
+@for $i from 1 through $maxCount {
+  @each $name, $breakpoint in $brekpointName {
+    .p-b#{$i}#{$name} {
+      @media (min-width: $breakpoint-md) {
+        padding-bottom: ($primarySpace * $i) px;
+      }
+    }
+  }
+}
