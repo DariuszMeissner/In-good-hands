@@ -5,7 +5,7 @@ import './NavMobileIcon.scss'
 export const NavMobileIcon = ({ onClick }) => {
     return (
         <>
-            <BarsIcon onClick={onClick}>Icon</BarsIcon>
+            <BarsIcon className="icon-bars" onClick={onClick}>Icon</BarsIcon>
         </>
     )
 }
