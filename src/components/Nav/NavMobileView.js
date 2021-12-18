@@ -4,7 +4,7 @@ import './NavMobileView.scss'
 
 export const NavMobileView = ({ onClick }) => {
     return (
-        <div>
+        <div className='navMobileView'>
             <NavAuth />
             <NavMain />
             <button onClick={onClick}>Close</button>

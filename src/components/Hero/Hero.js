@@ -8,10 +8,10 @@ const Hero = () => {
     return (
         <>
             <div className="row hero">
-                <div className="col-sm-6">
+                <div className="c-s-6">
                     <img className="hero__image" src={HeroImage} alt="hero" />
                 </div>
-                <div className="col-sm-6 hero__cta">
+                <div className="c-s-6 hero__cta">
                     <div className="hero__box">
                         <h1>Start helping! Put your unwanted items in trusted hands</h1>
                         <DecorationSvg />
