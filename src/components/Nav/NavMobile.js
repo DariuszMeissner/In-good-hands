@@ -10,8 +10,9 @@ export const NavMobile = () => {
     }
 
     return (
-        <div>
-            {isOpen ? <NavMobileView onClick={handleClick} /> : <NavMobileIcon onClick={handleClick} />}
-        </div>
+        <>
+            <NavMobileIcon onClick={handleClick} />
+            {isOpen && <NavMobileView onClick={handleClick} />}
+        </>
     )
 }
