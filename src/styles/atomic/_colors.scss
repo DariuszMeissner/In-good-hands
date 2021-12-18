@@ -1,0 +1,32 @@
+$breakpoint-s: 300px;
+$breakpoint-m: 576px;
+$breakpoint-l: 768px;
+$breakpoint-xl: 1140px;
+
+// Map of brakpoints name
+$brekpointName: (
+  "": $breakpoint-s,
+  "-s": $breakpoint-s,
+  "-m": $breakpoint-m,
+  "-l": $breakpoint-l,
+  "-xl": $breakpoint-xl,
+);
+
+// Primary value
+$primarySpace: 4; // 4px
+$maxCount: 6;
+
+$colors: (
+  "1": #3c3c3c,
+  "2": #fad648,
+  "3": #f0f1f1,
+  "4": #000,
+  "5": #737373,
+  "6": #5e5322,
+);
+
+@each $key, $value in $colors {
+  .col-#{$key} {
+    color: $value;
+  }
+}
