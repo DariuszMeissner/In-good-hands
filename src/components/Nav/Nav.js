@@ -1,30 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { NavAuth, NavMain, NavMobile } from '.'
+import { ClientSize } from '../UI/clientSize'
 import './Nav.scss'
 
 export const Nav = () => {
-
-    // Handle width size of screen
-    const getWindowDimensions = () => {
-        let { innerWidth: width } = window;
-        width < 720 ? width = true : width = false
-        return width
-    }
-
-    // Set screen size afetr loaded app
-    const [isMobile, setIsMobile] = useState(getWindowDimensions());
-
-
-    useEffect(() => {
-        const handleResize = () => { setIsMobile(getWindowDimensions()) }
-
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    const { isS, isM, isL, isXL } = ClientSize();
 
     return (
-        <nav>
-            {isMobile ? <NavMobile /> : (
+        <nav className='flex flex-column flex-align-start-s flex-align-end-l'>
+            {(isS || isM) ? <NavMobile /> : (
                 <>
                     <NavAuth />
                     <NavMain />
