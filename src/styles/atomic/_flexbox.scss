@@ -70,7 +70,7 @@ $brekpointName: (
 }
 
 @each $name, $breakpoint in $brekpointName {
-  .flex-direction-column#{$name} {
+  .flex-column#{$name} {
     @media (min-width: $breakpoint) {
       flex-direction: column;
     }

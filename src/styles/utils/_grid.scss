@@ -2,9 +2,9 @@
 
 $columns: 12;
 $column-base-width: math.div(100%, $columns);
-$breakpoint-sm: 736px;
-$breakpoint-md: 1025px;
-$breakpoint-lg: 1280px;
+$breakpoint-s: 736px;
+$breakpoint-m: 1025px;
+$breakpoint-l: 1280px;
 $breakpoint-xl: 1680px;
 
 .container {
@@ -25,34 +25,34 @@ $breakpoint-xl: 1680px;
   }
 
   @for $i from 1 through $columns {
-    .col-xs-#{$i} {
+    .c-xs-#{$i} {
       width: $column-base-width * $i;
     }
   }
 
   @for $i from 1 through $columns {
-    .col-sm-#{$i} {
-      @media (min-width: $breakpoint-sm) {
+    .c-s-#{$i} {
+      @media (min-width: $breakpoint-s) {
         width: $column-base-width * $i;
       }
     }
   }
   @for $i from 1 through $columns {
-    .col-md-#{$i} {
-      @media (min-width: $breakpoint-md) {
+    .c-m-#{$i} {
+      @media (min-width: $breakpoint-m) {
         width: $column-base-width * $i;
       }
     }
   }
   @for $i from 1 through $columns {
-    .col-lg-#{$i} {
-      @media (min-width: $breakpoint-lg) {
+    .c-l-#{$i} {
+      @media (min-width: $breakpoint-l) {
         width: $column-base-width * $i;
       }
     }
   }
   @for $i from 1 through $columns {
-    .col-xl-#{$i} {
+    .c-xl-#{$i} {
       @media (min-width: $breakpoint-xl) {
         width: $column-base-width * $i;
       }
