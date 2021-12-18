@@ -12,10 +12,6 @@ $brekpointName: (
   "-xl": $breakpoint-xl,
 );
 
-// Primary value
-$primarySpace: 4; // 4px
-$maxCount: 6;
-
 $colors: (
   "1": #3c3c3c,
   "2": #fad648,
@@ -26,7 +22,11 @@ $colors: (
 );
 
 @each $key, $value in $colors {
-  .col-#{$key} {
-    color: $value;
+  @each $breakName, $breakpoint in $brekpointName {
+    .col-#{$key}#{$breakName} {
+      @media (min-width: $breakpoint) {
+        color: $value;
+      }
+    }
   }
 }
