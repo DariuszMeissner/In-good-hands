@@ -14,14 +14,14 @@ $brekpointName: (
 );
 
 // Primary value
-$primarySpace: 4; // 4px
+$primarySpace: 4px;
 $maxCount: 24;
 
 @for $i from 1 through $maxCount {
   @each $name, $breakpoint in $brekpointName {
     .m-#{$i}#{$name} {
       @media (min-width: $breakpoint) {
-        margin: ($primarySpace * $i) px;
+        margin: $primarySpace * $i;
       }
     }
   }
@@ -29,9 +29,9 @@ $maxCount: 24;
 
 @for $i from 1 through $maxCount {
   @each $name, $breakpoint in $brekpointName {
-    .m-l#{$i}#{$name} {
+    .m-l-#{$i}#{$name} {
       @media (min-width: $breakpoint) {
-        margin-left: ($primarySpace * $i) px;
+        margin-left: $primarySpace * $i;
       }
     }
   }
@@ -39,9 +39,9 @@ $maxCount: 24;
 
 @for $i from 1 through $maxCount {
   @each $name, $breakpoint in $brekpointName {
-    .m-r#{$i}#{$name} {
+    .m-r-#{$i}#{$name} {
       @media (min-width: $breakpoint) {
-        margin-right: ($primarySpace * $i) px;
+        margin-right: $primarySpace * $i;
       }
     }
   }
@@ -49,9 +49,9 @@ $maxCount: 24;
 
 @for $i from 1 through $maxCount {
   @each $name, $breakpoint in $brekpointName {
-    .m-t#{$i}#{$name} {
+    .m-t-#{$i}#{$name} {
       @media (min-width: $breakpoint) {
-        margin-top: ($primarySpace * $i) px;
+        margin-top: $primarySpace * $i;
       }
     }
   }
@@ -59,9 +59,9 @@ $maxCount: 24;
 
 @for $i from 1 through $maxCount {
   @each $name, $breakpoint in $brekpointName {
-    .m-b#{$i}#{$name} {
+    .m-b-#{$i}#{$name} {
       @media (min-width: $breakpoint) {
-        margin-bottom: ($primarySpace * $i) px;
+        margin-bottom: $primarySpace * $i;
       }
     }
   }
