@@ -1,24 +1,11 @@
-// Breakpoints
-$breakpoint-s: 300px;
-$breakpoint-m: 576px;
-$breakpoint-l: 768px;
-$breakpoint-xl: 1140px;
-
-// Map of brakpoints name
-$brekpointName: (
-  "": $breakpoint-s,
-  "-s": $breakpoint-s,
-  "-m": $breakpoint-m,
-  "-l": $breakpoint-l,
-  "-xl": $breakpoint-xl,
-);
+@use "./breakpoint_variables";
 
 // Primary value
 $primarySpace: 4px;
 $maxCount: 24;
 
 @for $i from 1 through $maxCount {
-  @each $name, $breakpoint in $brekpointName {
+  @each $name, $breakpoint in $breakpointName {
     .p-#{$i}#{$name} {
       @media (min-width: $breakpoint-m) {
         padding: $primarySpace * $i;
@@ -28,7 +15,7 @@ $maxCount: 24;
 }
 
 @for $i from 1 through $maxCount {
-  @each $name, $breakpoint in $brekpointName {
+  @each $name, $breakpoint in $breakpointName {
     .p-l-#{$i}#{$name} {
       @media (min-width: $breakpoint) {
         padding-left: $primarySpace * $i;
@@ -38,7 +25,7 @@ $maxCount: 24;
 }
 
 @for $i from 1 through $maxCount {
-  @each $name, $breakpoint in $brekpointName {
+  @each $name, $breakpoint in $breakpointName {
     .p-r-#{$i}#{$name} {
       @media (min-width: $breakpoint) {
         padding-right: $primarySpace * $i;
@@ -48,7 +35,7 @@ $maxCount: 24;
 }
 
 @for $i from 1 through $maxCount {
-  @each $name, $breakpoint in $brekpointName {
+  @each $name, $breakpoint in $breakpointName {
     .p-t-#{$i}#{$name} {
       @media (min-width: $breakpoint) {
         padding-top: $primarySpace * $i;
@@ -58,7 +45,7 @@ $maxCount: 24;
 }
 
 @for $i from 1 through $maxCount {
-  @each $name, $breakpoint in $brekpointName {
+  @each $name, $breakpoint in $breakpointName {
     .p-b-#{$i}#{$name} {
       @media (min-width: $breakpoint) {
         padding-bottom: $primarySpace * $i;

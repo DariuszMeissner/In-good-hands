@@ -1,16 +1,4 @@
-$breakpoint-s: 300px;
-$breakpoint-m: 576px;
-$breakpoint-l: 768px;
-$breakpoint-xl: 1140px;
-
-// Map of brakpoints name
-$brekpointName: (
-  "": $breakpoint-s,
-  "-s": $breakpoint-s,
-  "-m": $breakpoint-m,
-  "-l": $breakpoint-l,
-  "-xl": $breakpoint-xl,
-);
+@use "./breakpoint_variables";
 
 $colors: (
   "1": #3c3c3c,
@@ -23,7 +11,7 @@ $colors: (
 
 // text color
 @each $key, $value in $colors {
-  @each $breakName, $breakpoint in $brekpointName {
+  @each $breakName, $breakpoint in $breakpointName {
     .col-#{$key}#{$breakName} {
       @media (min-width: $breakpoint) {
         color: $value;
@@ -34,7 +22,7 @@ $colors: (
 
 // background color
 @each $key, $value in $colors {
-  @each $breakName, $breakpoint in $brekpointName {
+  @each $breakName, $breakpoint in $breakpointName {
     .bg-col-#{$key}#{$breakName} {
       @media (min-width: $breakpoint) {
         background-color: $value;
