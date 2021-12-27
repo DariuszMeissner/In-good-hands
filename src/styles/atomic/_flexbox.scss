@@ -1,20 +1,7 @@
-// Breakpoints
-$breakpoint-s: 300px;
-$breakpoint-m: 576px;
-$breakpoint-l: 768px;
-$breakpoint-xl: 1140px;
-
-// Map of brakpoints name
-$brekpointName: (
-  "": $breakpoint-s,
-  "-s": $breakpoint-s,
-  "-m": $breakpoint-m,
-  "-l": $breakpoint-l,
-  "-xl": $breakpoint-xl,
-);
+@use "./breakpoint_variables";
 
 // loop display flex
-@each $name, $breakpoint in $brekpointName {
+@each $name, $breakpoint in $breakpointName {
   .flex#{$name} {
     @media (min-width: $breakpoint) {
       display: flex;
@@ -23,7 +10,7 @@ $brekpointName: (
 }
 
 // loop justify-content: center
-@each $name, $breakpoint in $brekpointName {
+@each $name, $breakpoint in $breakpointName {
   .flex-justify-center#{$name} {
     @media (min-width: $breakpoint) {
       justify-content: center;
@@ -31,7 +18,7 @@ $brekpointName: (
   }
 }
 // loop justify-content: flex-start
-@each $name, $breakpoint in $brekpointName {
+@each $name, $breakpoint in $breakpointName {
   .flex-justify-start#{$name} {
     @media (min-width: $breakpoint) {
       justify-content: flex-start;
@@ -39,7 +26,7 @@ $brekpointName: (
   }
 }
 
-@each $name, $breakpoint in $brekpointName {
+@each $name, $breakpoint in $breakpointName {
   .flex-justify-end#{$name} {
     @media (min-width: $breakpoint) {
       justify-content: flex-end;
@@ -47,21 +34,21 @@ $brekpointName: (
   }
 }
 
-@each $name, $breakpoint in $brekpointName {
+@each $name, $breakpoint in $breakpointName {
   .flex-align-center#{$name} {
     @media (min-width: $breakpoint) {
       align-items: center;
     }
   }
 }
-@each $name, $breakpoint in $brekpointName {
+@each $name, $breakpoint in $breakpointName {
   .flex-align-start#{$name} {
     @media (min-width: $breakpoint) {
       align-items: flex-start;
     }
   }
 }
-@each $name, $breakpoint in $brekpointName {
+@each $name, $breakpoint in $breakpointName {
   .flex-align-end#{$name} {
     @media (min-width: $breakpoint) {
       align-items: flex-end;
@@ -69,7 +56,7 @@ $brekpointName: (
   }
 }
 
-@each $name, $breakpoint in $brekpointName {
+@each $name, $breakpoint in $breakpointName {
   .flex-column#{$name} {
     @media (min-width: $breakpoint) {
       flex-direction: column;
@@ -77,7 +64,7 @@ $brekpointName: (
   }
 }
 
-@each $name, $breakpoint in $brekpointName {
+@each $name, $breakpoint in $breakpointName {
   .block#{$name} {
     @media (min-width: $breakpoint) {
       display: block;
