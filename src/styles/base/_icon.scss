@@ -3,8 +3,14 @@
   height: 1.25rem;
   fill: $col-1;
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.icon-bars{
-  background-image: url('../../assets/icons/bars.svg');
+.icon-bars {
+  background-image: url("../../assets/icons/bars.svg");
+}
+
+.icon-close {
+  background-image: url("../../assets/icons/close.svg");
 }

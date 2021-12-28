@@ -13,6 +13,8 @@ export const NavMobile = () => {
     return (
         <>
             <NavMobileIcon onClick={handleClick} />
+
+            {/* transition for show/hide menu */}
             <Transition
                 mountOnEnter
                 unmountOnExit

@@ -7,21 +7,29 @@ export const NavMobileView = ({ onClick, show }) => {
     const { isS, isM } = ClientSize();
 
     const cssClasses = [
-        "navMobileView",
+        "navMobileView row p-4",
         show === 'entering' || show === 'entered'
             ? "show-up"
             : show === 'exiting' ? "hide-up" : null,
 
         isS
-            ? "mobile-width" 
+            ? "mobile-width"
             : isM ? "tablet-width" : null
     ]
 
     return (
         <div className={cssClasses.join(' ')}>
-            <NavAuth />
-            <NavMain />
-            <button onClick={onClick}>Close</button>
+            
+            {/* menu mobile grid */}
+            <div className='c-xs-8'>
+                <NavAuth />
+            </div>
+            <div className='c-xs-4 flex flex-justify-end'>
+                <button className='icon-close p-3-s' onClick={onClick} />
+            </div>
+            <div className='c-xs-12'>
+                <NavMain />
+            </div>
         </div>
     )
 }
