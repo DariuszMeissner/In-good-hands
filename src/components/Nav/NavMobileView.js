@@ -3,10 +3,8 @@ import { NavAuth, NavMain } from '.'
 import './NavMobileView.scss'
 import { ClientSize } from '../UI/clientSize'
 
-
-
 export const NavMobileView = ({ onClick, show }) => {
-    const { isS, isM, isL, isXL } = ClientSize();
+    const { isS, isM } = ClientSize();
 
     const cssClasses = [
         "navMobileView",
