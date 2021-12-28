@@ -7,7 +7,7 @@ $maxCount: 24;
 @for $i from 1 through $maxCount {
   @each $name, $breakpoint in $breakpointName {
     .p-#{$i}#{$name} {
-      @media (min-width: $breakpoint-m) {
+      @media (min-width: $breakpoint) {
         padding: $primarySpace * $i;
       }
     }
