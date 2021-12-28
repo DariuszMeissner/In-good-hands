@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './styles/_main.scss'
 import './App.scss'
 import { Nav } from './components/Nav'
 import { Login, Register } from './components/Auth'

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Transition } from 'react-transition-group'
 import { NavMobileIcon, NavMobileView } from '.'
 import './NavMobile.scss'
 
@@ -12,7 +13,15 @@ export const NavMobile = () => {
     return (
         <>
             <NavMobileIcon onClick={handleClick} />
-            {isOpen && <NavMobileView onClick={handleClick} />}
+            <Transition
+                mountOnEnter
+                unmountOnExit
+                in={isOpen}
+                timeout={300}>
+                {state => (
+                    <NavMobileView onClick={handleClick} show={state} />
+                )}
+            </Transition>
         </>
     )
 }
