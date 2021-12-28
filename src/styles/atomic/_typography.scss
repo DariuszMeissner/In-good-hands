@@ -7,7 +7,7 @@ $maxCount: 12;
 @for $i from 1 through $maxCount {
   @each $name, $breakpoint in $breakpointName {
     .fs-#{$i}#{$name} {
-      @media (min-width: $breakpoint-m) {
+      @media (min-width: $breakpoint) {
         font-size: $primaryStep * $i;
       }
     }
