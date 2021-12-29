@@ -1,9 +1,10 @@
 @use "./breakpoint_variables";
 
 // Primary value
-$primaryStep: 0.25rem;
+$primaryStep: 0.25rem; // 4px
 $maxCount: 12;
 
+// font size
 @for $i from 1 through $maxCount {
   @each $name, $breakpoint in $breakpointName {
     .fs-#{$i}#{$name} {
@@ -13,3 +14,36 @@ $maxCount: 12;
     }
   }
 }
+
+// text align
+@for $i from 1 through $maxCount {
+  @each $name, $breakpoint in $breakpointName {
+    .center#{$name} {
+      @media (min-width: $breakpoint) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@for $i from 1 through $maxCount {
+  @each $name, $breakpoint in $breakpointName {
+    .left#{$name} {
+      @media (min-width: $breakpoint) {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@for $i from 1 through $maxCount {
+  @each $name, $breakpoint in $breakpointName {
+    .right#{$name} {
+      @media (min-width: $breakpoint) {
+        text-align: right;
+      }
+    }
+  }
+}
+
+
