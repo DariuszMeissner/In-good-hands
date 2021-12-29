@@ -1,0 +1,19 @@
+@import "../atomic/px_to_rem";
+
+// Special classes for typhography
+// Heading text
+.h1 {
+  font-size: px-to-rem(32px);
+  letter-spacing: 0.02em;
+  line-height: 1.5em;
+}
+.h2 {
+  font-size: px-to-rem(24px);
+  letter-spacing: 0.02em;
+  line-height: 1.5em;
+}
+.h3 {
+  font-size: px-to-rem(18.72px);
+  letter-spacing: 0.02em;
+  line-height: 1.5em;
+}
