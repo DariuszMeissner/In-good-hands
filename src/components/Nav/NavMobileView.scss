@@ -1,7 +1,6 @@
+@use "sass:map";
 @import '../../styles/settings/colors';
 
 .navMobileView {
-  background-color: $col-3;
+  background-color: map.get($colors,3);
 }
-
-

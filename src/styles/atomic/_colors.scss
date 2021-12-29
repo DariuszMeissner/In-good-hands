@@ -1,14 +1,5 @@
 @use "./breakpoint_variables";
 
-$colors: (
-  "1": #3c3c3c,
-  "2": #fad648,
-  "3": #f0f1f1,
-  "4": #000,
-  "5": #737373,
-  "6": #5e5322,
-);
-
 // text color
 @each $key, $value in $colors {
   @each $breakName, $breakpoint in $breakpointName {
