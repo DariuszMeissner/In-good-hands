@@ -16,34 +16,26 @@ $maxCount: 12;
 }
 
 // text align
-@for $i from 1 through $maxCount {
-  @each $name, $breakpoint in $breakpointName {
-    .center#{$name} {
-      @media (min-width: $breakpoint) {
-        text-align: center;
-      }
+@each $name, $breakpoint in $breakpointName {
+  .center#{$name} {
+    @media (min-width: $breakpoint) {
+      text-align: center;
     }
   }
 }
 
-@for $i from 1 through $maxCount {
-  @each $name, $breakpoint in $breakpointName {
-    .left#{$name} {
-      @media (min-width: $breakpoint) {
-        text-align: left;
-      }
+@each $name, $breakpoint in $breakpointName {
+  .left#{$name} {
+    @media (min-width: $breakpoint) {
+      text-align: left;
     }
   }
 }
 
-@for $i from 1 through $maxCount {
-  @each $name, $breakpoint in $breakpointName {
-    .right#{$name} {
-      @media (min-width: $breakpoint) {
-        text-align: right;
-      }
+@each $name, $breakpoint in $breakpointName {
+  .right#{$name} {
+    @media (min-width: $breakpoint) {
+      text-align: right;
     }
   }
 }
-
-
