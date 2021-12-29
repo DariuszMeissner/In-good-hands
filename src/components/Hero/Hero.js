@@ -13,7 +13,7 @@ const Hero = () => {
                 </div>
                 <div className="c-s-6">
                     <div>
-                        <h1 className='center'>Start helping! Put your unwanted items in trusted hands</h1>
+                        <h1 className='h1 center'>Start helping! Put your unwanted items in trusted hands</h1>
                         <DecorationSvg />
                         <div>
                             <Button
