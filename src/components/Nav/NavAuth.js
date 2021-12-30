@@ -1,12 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './NavAuth.scss'
+import { ClientSize } from '../UI/clientSize'
 
 export const NavAuth = () => {
+    const { isS, isM } = ClientSize()
     return (
-        <ul className='flex-l m-b-4 fs-1-l'>
-            <li><Link to="/sign-in">Sign In</Link></li>
-            <li><Link to="/register">Register</Link></li>
+        <ul className='navAuth flex m-b-4 fs-3'>
+            {isS || isM
+                ?
+                <>
+                    <div className='icon-sign-in'></div>
+                    <div className='icon-register'></div>
+                </>
+
+                :
+                <>
+                    <li className='b-col-2-l'><Link to="/sign-in">Sign In</Link></li>
+                    <li className=''><Link to="/register">Register</Link></li>
+                </>
+            }
         </ul>
     )
 }
