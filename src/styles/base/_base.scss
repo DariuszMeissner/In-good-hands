@@ -3,11 +3,7 @@
 html,
 body {
   font-family: $font-base;
-  color:  map.get($colors,1);
-}
-
-li a {
-  padding: 0 0.5rem;
+  color: map.get($colors, 1);
 }
 
 img {

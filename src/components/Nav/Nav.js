@@ -9,7 +9,11 @@ export const Nav = () => {
     return (
         <nav className='m-b-3-s m-t-3-s m-b-6-l m-t-6-l flex-l flex-column-l flex-align-end'>
             {(isS || isM)
-                ? <NavMobile />
+                ?
+                <div className='flex flex-justify-between'>
+                    <NavMobile />
+                    <NavAuth />
+                </div>
                 : (
                     <>
                         <NavAuth />

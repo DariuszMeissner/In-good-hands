@@ -35,6 +35,22 @@
 }
 
 @each $name, $breakpoint in $breakpointName {
+  .flex-justify-between#{$name} {
+    @media (min-width: $breakpoint) {
+      justify-content: space-between;
+    }
+  }
+}
+
+@each $name, $breakpoint in $breakpointName {
+  .flex-justify-around#{$name} {
+    @media (min-width: $breakpoint) {
+      justify-content: space-around;
+    }
+  }
+}
+
+@each $name, $breakpoint in $breakpointName {
   .flex-align-center#{$name} {
     @media (min-width: $breakpoint) {
       align-items: center;
