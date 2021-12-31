@@ -4,14 +4,14 @@ import './NavAuth.scss'
 import { ClientSize } from '../UI/clientSize'
 
 export const NavAuth = () => {
-    const { isS, isM } = ClientSize()
+    const { isS, isM, isL } = ClientSize()
     return (
         <ul className='navAuth flex m-b-4 fs-3'>
-            {isS || isM
+            {isS || isM || isL
                 ?
                 <>
-                    <div className='icon-sign-in'></div>
-                    <div className='icon-register'></div>
+                    <Link to="/sign-in"><li className='icon-sign-in'></li></Link>
+                    <Link to="/register"><li className='icon-register'></li></Link>
                 </>
 
                 :

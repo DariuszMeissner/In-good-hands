@@ -81,9 +81,25 @@
 }
 
 @each $name, $breakpoint in $breakpointName {
+  .flex-row#{$name} {
+    @media (min-width: $breakpoint) {
+      flex-direction: row;
+    }
+  }
+}
+
+@each $name, $breakpoint in $breakpointName {
   .block#{$name} {
     @media (min-width: $breakpoint) {
       display: block;
+    }
+  }
+}
+
+@each $name, $breakpoint in $breakpointName {
+  .inline#{$name} {
+    @media (min-width: $breakpoint) {
+      display: inline-block;
     }
   }
 }
