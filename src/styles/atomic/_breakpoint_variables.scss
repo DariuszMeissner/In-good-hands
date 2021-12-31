@@ -1,6 +1,7 @@
 $breakpoint-s: 200px;
 $breakpoint-m: 576px;
 $breakpoint-l: 768px;
+$breakpoint-ml: 1024px;
 $breakpoint-xl: 1140px;
 
 // Map of brakpoints name
@@ -9,5 +10,6 @@ $breakpointName: (
   "-s": $breakpoint-s,
   "-m": $breakpoint-m,
   "-l": $breakpoint-l,
+  "-ml": $breakpoint-ml,
   "-xl": $breakpoint-xl,
 );

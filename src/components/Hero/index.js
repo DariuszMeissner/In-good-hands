@@ -1,1 +1,5 @@
-export { default } from './Hero'
+export { Hero } from './Hero'
+export { HeroIntro } from './HeroIntro'
+export { HeroImage } from './HeroImage'
+export { HeroIntroButtons } from './HeroIntroButtons'
+export { HeroIntroHeading } from './HeroIntroHeading'

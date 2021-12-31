@@ -4,7 +4,7 @@ import './NavMobileView.scss'
 import { ClientSize } from '../UI/clientSize'
 
 export const NavMobileView = ({ onClick, show }) => {
-    const { isS, isM } = ClientSize();
+    const { isS, isM, isL } = ClientSize();
 
     const cssClasses = [
         "navMobileView row",
@@ -14,19 +14,19 @@ export const NavMobileView = ({ onClick, show }) => {
 
         isS
             ? "mobile-width"
-            : isM ? "tablet-width" : null
+            : (isM || isL) ? "tablet-width" : null
     ]
 
     return (
-            <div className={cssClasses.join(' ')}>
+        <div className={cssClasses.join(' ')}>
 
-                {/* menu mobile grid */}
-                <div className='c-xs-8'>
-                    <NavMain />
-                </div>
-                <div className='c-xs-4 flex flex-justify-end'>
-                    <button className='icon-close p-3-s' onClick={onClick} />
-                </div>
+            {/* menu mobile grid */}
+            <div className='c-s-8'>
+                <NavMain />
             </div>
+            <div className='c-s-4 flex flex-justify-end'>
+                <button className='icon-close p-3-s' onClick={onClick} />
+            </div>
+        </div>
     )
 }

@@ -8,13 +8,15 @@ export const ClientSize = () => {
             isS: false,
             isM: false,
             isL: false,
+            isML: false,
             isXL: false,
         }
 
         let { innerWidth: width } = window;
         width <= 576 ? client.isS = true : client.isS = false
         width > 576 && width < 768 ? client.isM = true : client.isM = false
-        width >= 768 && width < 1140 ? client.isL = true : client.isL = false
+        width >= 768 && width < 1024 ? client.isL = true : client.isL = false
+        width >= 1024 && width < 1140 ? client.isML = true : client.isML = false
         width >= 1140 ? client.isXL = true : client.isXL = false
         return client
     }
