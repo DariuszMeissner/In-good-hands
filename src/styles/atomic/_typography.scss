@@ -39,3 +39,11 @@ $maxCount: 12;
     }
   }
 }
+
+@each $name, $breakpoint in $breakpointName {
+  .uppercase#{$name} {
+    @media (min-width: $breakpoint) {
+      text-transform: uppercase;
+    }
+  }
+}

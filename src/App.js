@@ -8,14 +8,12 @@ import Home from './components/Home'
 const App = () => {
   return (
     <Router>
-      <div className="container">
         <Nav />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/sign-in' element={<Login />} />
           <Route path='/register' element={<Register />} />
         </Routes>
-      </div>
     </Router>
   )
 }

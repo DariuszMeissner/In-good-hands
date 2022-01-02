@@ -4,7 +4,7 @@ import './StatisticsTitle.scss'
 export const StatisticsTitle = ({title}) => {
     return (
         <>
-         <span>{title}</span>   
+            <span className='fs-6 uppercase center m-b-4'>{title}</span>   
         </>
     )
 }

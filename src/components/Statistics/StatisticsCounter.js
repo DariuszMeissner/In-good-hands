@@ -4,7 +4,7 @@ import './StatisticsCounter.scss'
 export const StatisticsCounter = ({ counter }) => {
     return (
         <>
-            <h3>{counter}</h3>
+            <span className='fs-10 m-b-4'>{counter}</span>
         </>
     )
 }

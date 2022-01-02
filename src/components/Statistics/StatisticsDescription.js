@@ -4,7 +4,7 @@ import './StatisticsDescription.scss'
 export const StatisticsDescription = ({ description }) => {
     return (
         <>
-            <p>{description}</p>
+            <p className='center'>{description}</p>
         </>
     )
 }

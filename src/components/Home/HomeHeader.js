@@ -5,7 +5,7 @@ import './HomeHeader.scss'
 export const HomeHeader = () => {
 
     return (
-        <header>
+        <header className='container'>
             <Hero />
         </header>
     )
