@@ -9,11 +9,11 @@ export const HeroImage = () => {
         <>
             {(isML || isXL)
                 ?
-                <div className="heroImage c-ml-6">
+                <div className="heroImage c-ml-6 m-b-0">
                     <img src={ImgHero} alt="hero" />
                 </div>
-                : 
-                <div className="img c-s-12">
+                :
+                <div className="image c-s-12 ">
                     <img src={ImgHero} alt="hero" />
                 </div>
             }
