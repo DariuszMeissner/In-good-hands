@@ -13,7 +13,7 @@ export const HeroImage = () => {
                     <img src={ImgHero} alt="hero" />
                 </div>
                 : 
-                <div className="img c-s-12 pos-absolute pos-top-8">
+                <div className="img c-s-12">
                     <img src={ImgHero} alt="hero" />
                 </div>
             }
