@@ -22,7 +22,7 @@ export const NavMobileView = ({ onClick, show }) => {
 
             {/* menu mobile grid */}
             <div className='c-s-8'>
-                <NavMain />
+                <NavMain onClick={onClick}/>
             </div>
             <div className='c-s-4 flex flex-justify-end'>
                 <button className='icon-close p-3-s' onClick={onClick} />

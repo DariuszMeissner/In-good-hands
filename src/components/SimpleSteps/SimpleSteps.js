@@ -1,7 +1,7 @@
 import React from 'react'
 import './SimpleSteps.scss'
 import { SimpleStepsHeading } from './SimpleStepsHeading'
-import { SimpleStepsContent } from './SimpleStepsContent'
+import { SimpleStepsContent } from './Content/SimpleStepsContent'
 import { SimpleStepsCta } from './SimpleStepsCta'
 import { ClientSize } from '../UI/clientSize'
 

@@ -10,8 +10,8 @@ export const NavAuth = () => {
             {isS || isM || isL
                 ?
                 <>
-                    <Link to="/sign-in"><li className='icon-sign-in'></li></Link>
-                    <Link to="/register"><li className='icon-register'></li></Link>
+                    <Link to="/sign-in"><li className='icon-sign-in is-7'></li></Link>
+                    <Link to="/register"><li className='icon-register is-7'></li></Link>
                 </>
 
                 :
