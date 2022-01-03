@@ -1,0 +1,9 @@
+@use "sass:map";
+@import "../../styles/settings/colors";
+@import "../../styles/atomic/px_to_rem";
+
+.line {
+  height: 1px;
+  background-color: map.get($colors, 1);
+  width: px-to-rem(80px);
+}

@@ -1,0 +1,8 @@
+export { SimpleSteps } from './SimpleSteps'
+export { SimpleStepsContent } from './SimpleStepsContent'
+export { SimpleStepsCta } from './SimpleStepsCta'
+export { SimpleStepsHeading } from './SimpleStepsHeading'
+export { SimpleStepsStep } from './SimpleStepsStep'
+export { SimpleStepsStepIcon } from './SimpleStepsStepIcon'
+export { SimpleStepsStepDesc } from './SimpleStepsStepDesc'
+export { SimpleStepsStepTitle } from './SimpleStepsStepTitle'
