@@ -2,7 +2,7 @@
 
 // Primary value
 $primarySpace: 4px;
-$maxCount: 24;
+$maxCount: 40;
 
 @for $i from 0 through $maxCount {
   @each $name, $breakpoint in $breakpointName {
