@@ -5,9 +5,8 @@ import { SimpleStepsStep } from './SimpleStepsStep'
 
 export const SimpleStepsContent = () => {
     
-
     return (
-        <div className='container bg-col-3 m-t-8 m-b-8'>
+        <div className='container bg-col-3 m-t-8 m-b-8 p-t-8 p-b-8 no-max-width fit-10'>
             <div className='row'>
                 <SimpleStepsStep iconClass="icon-step1 is-25" title="Choose things" desc="cloths, toys, eauipment and others" />
                 <SimpleStepsStep iconClass="icon-step2 is-25" title="Pack them" desc="use garbage bags" />
