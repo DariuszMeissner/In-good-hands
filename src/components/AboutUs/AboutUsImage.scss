@@ -1,0 +1,14 @@
+@import "../../styles/utils/breakpoints_mixin";
+@import "../../styles/atomic/breakpoint_variables";
+
+.aboutUs {
+  &-image {
+    overflow: hidden;
+    img {
+      width: 130%;
+      @include laptop {
+        width: 100%;
+      }
+    }
+  }
+}
