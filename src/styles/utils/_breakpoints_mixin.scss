@@ -1,10 +1,11 @@
-$breakpoint-s: 300px;
-$breakpoint-m: 576px;
-$breakpoint-l: 768px;
-$breakpoint-xl: 1140px;
+@mixin desktop {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
 
 @mixin laptop {
-  @media (min-width: $breakpoint-xl) {
+  @media (min-width: $breakpoint-ml) {
     @content;
   }
 }

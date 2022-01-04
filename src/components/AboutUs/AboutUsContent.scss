@@ -1,0 +1,18 @@
+@import '../../styles/atomic/px_to_rem';
+
+.aboutUs {
+    &-content, &-image{
+        padding: 0!important;
+        margin: 0!important;
+    }
+    .decoration {
+        width: px-to-rem(150px);
+    }
+    p, .sign-wrapper {
+        width: 60%;
+    }
+    .sign {
+        width: px-to-rem(120px);
+        height: px-to-rem(120px);
+    }
+}

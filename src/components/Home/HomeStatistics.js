@@ -15,7 +15,7 @@ export const HomeStatistics = () => {
 
     return (
         <section className={cssClasses.join(' ')}>
-            <div className='row p-t-8 p-b-8' id="whatGoingOn">
+            <div className='row p-t-8 p-b-8'>
                 <StatisticsColumn
                     counter={10}
                     title="Given bags"
