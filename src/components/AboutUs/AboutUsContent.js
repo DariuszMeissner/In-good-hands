@@ -1,7 +1,7 @@
 import React from 'react'
 import './AboutUsContent.scss'
 import { ReactComponent as DecorationSvg } from '../../assets/images/Decoration.svg'
-import { ReactComponent as SignSvg } from '../../assets/images/Signature.svg'
+import { ReactComponent as SignSvg } from '../../assets/images/signature.svg'
 
 
 export const AboutUsContent = () => {
