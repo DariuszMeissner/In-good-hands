@@ -20,7 +20,7 @@ export const NavMain = ({ onClick }) => {
                     About us?
                 </Link></li>
             <li onClick={onClick}>
-                <Link to="organizations" onClick={onClick} spy={true} smooth={true} dusration={500}>
+                <Link to="whoWeHelp" onClick={onClick} spy={true} smooth={true} dusration={500}>
                     Foundations and
                     organizations
                 </Link></li>
