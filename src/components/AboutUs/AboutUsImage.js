@@ -4,11 +4,11 @@ import ImgAboutUs from '../../assets/images/People.jpg'
 import { ClientSize } from '../UI/clientSize'
 
 export const AboutUsImage = () => {
-    const { isML, isXL } = ClientSize()
+    const { isL, isML, isXL } = ClientSize()
 
     return (
         <>
-            {isML || isXL
+            {isL || isML || isXL
                 ?
                 <div className='aboutUs-image c-s-12 c-l-6'>
                     <img src={ImgAboutUs} alt="people" />

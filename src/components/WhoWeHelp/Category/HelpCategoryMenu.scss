@@ -1,0 +1,9 @@
+@import "../../../styles/utils/breakpoints_mixin";
+@import "../../../styles/atomic/breakpoint_variables";
+
+.categoryDesc {
+  width: 100%;
+  @include midmobile {
+    width: 500px;
+  }
+}
