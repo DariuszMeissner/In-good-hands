@@ -6,7 +6,7 @@ ul li{
   padding: px-to-rem(8px);
   margin: 0 px-to-rem(8px);
   border: 1px solid transparent;
-  &:hover {
-    color: map.get($colors, 2);
-  }
+  // &:hover {
+  //   color: map.get($colors, 2);
+  // }
 }

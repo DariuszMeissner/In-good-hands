@@ -1,0 +1,14 @@
+@use "sass:map";
+@import "../../../styles/settings/fonts";
+@import "../../../styles/settings/colors";
+
+.h3,
+.p {
+  font-family: $font-alt;
+}
+
+.categoryItem {
+  border-bottom: 1px solid map.get($colors, 1);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
