@@ -4,9 +4,9 @@ import './HelpHeading.scss'
 
 export const HelpHeading = () => {
     return (
-        <>
-            <h3 className='h3'>About us</h3>
-            <DecorationSvg className='decoration m-b-6 m-t-1' />   
-        </>
+        <div className='m-b-4 flex flex-column flex-align-center'>
+            <h2 className='h2'>Who we help?</h2>
+            <DecorationSvg className='decoration m-b-6 m-t-1' />
+        </div>
     )
 }
