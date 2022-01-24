@@ -1,20 +1,33 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import uniqid from 'uniqid'
+import { contactFormActions } from '../../store/reducers/contactForm-slice'
+import { sendFormData } from '../../store/reducers/contactForm-actions'
 import './ContactForm.scss'
 
 export const ContactForm = () => {
     const dispatch = useDispatch()
+    const formData = useSelector(state => state.contactForm)
+
     const [form, setForm] = useState({
+        id: '',
         name: '',
         email: '',
         message: '',
     })
+
+    useEffect(() => {
+        if (formData.changed) {
+            dispatch(sendFormData(formData))
+        }
+    }, [formData, dispatch])
 
     const handleChange = (e) => {
         const { name, value } = e.target
         setForm(prev => {
             return {
                 ...prev,
+                id: uniqid(),
                 [name]: value
             }
         })
@@ -22,6 +35,15 @@ export const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        dispatch(
+            contactFormActions.addFormMessage(form)
+        )
+        setForm({
+            id: '',
+            name: '',
+            email: '',
+            message: '',
+        })
     }
 
     return (
