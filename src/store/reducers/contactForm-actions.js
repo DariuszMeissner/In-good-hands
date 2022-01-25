@@ -3,7 +3,7 @@ export const sendFormData = (form) => {
     return async (dispatch) => {
         const sendRequest = async () => {
             const response = await fetch(
-                'https://in-good-hands-db402-default-rtdb.europe-west1.firebasedatabase.app/formData.json',
+                'https://in-good-hands-db402-default-rtdb.europe-west1.firebasedatabase.app/contactForm.json',
                 {
                     method: 'PUT',
                     body: JSON.stringify({
