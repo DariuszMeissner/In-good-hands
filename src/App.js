@@ -9,16 +9,16 @@ import { fetchHelpData } from './store/reducers/help-actions'
 import { sendFormData } from './store/reducers/contactForm-actions'
 
 
-
-
 const App = () => {
   const dispatch = useDispatch()
   const formData = useSelector(state => state.contactForm)
 
+  // fetching organization entries
   useEffect(() => {
     dispatch(fetchHelpData())
   }, [dispatch])
 
+  // sending form data to firebase
   useEffect(() => {
     dispatch(sendFormData(formData))
   }, [formData, dispatch])
