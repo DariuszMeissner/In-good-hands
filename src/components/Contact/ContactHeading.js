@@ -4,8 +4,8 @@ import { ReactComponent as DecorationSvg } from '../../assets/images/Decoration.
 
 export const ContactHeading = () => {
     return (
-        <div className=''>
-            <h3 className='h3'>Contact with us</h3>
+        <div className='flex flex-column flex-align-center'>
+            <h2 className='h2'>Contact with us</h2>
             <DecorationSvg className='decoration m-b-6 m-t-1' />
         </div>
     )
