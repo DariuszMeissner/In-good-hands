@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import uniqid from 'uniqid'
-import { contactFormActions } from '../../store/reducers/contactForm-slice'
 import './ContactForm.scss'
+import uniqid from 'uniqid'
+import { Notification } from '.'
+import { contactFormActions } from '../../store/reducers/contactForm-slice'
 
 export const ContactForm = () => {
     const dispatch = useDispatch()
@@ -41,7 +42,6 @@ export const ContactForm = () => {
         <form className='form flex flex-column'
             onSubmit={handleSubmit}>
             <label>
-                {console.log(notification)}
                 <div>Insert your name</div>
                 <input
                     id='name'
@@ -70,6 +70,11 @@ export const ContactForm = () => {
             <input
                 type="submit"
                 value="Send" />
+            {notification &&
+                <Notification
+                    status={notification.status}
+                    title={notification.title}
+                    message={notification.message} />}
         </form>
     )
 }
