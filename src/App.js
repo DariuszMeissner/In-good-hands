@@ -8,6 +8,7 @@ import Home from './components/Home'
 import { fetchHelpData } from './store/reducers/help-actions'
 import { sendFormData } from './store/reducers/contactForm-actions'
 
+let isInitial = true;
 
 const App = () => {
   const dispatch = useDispatch()
@@ -20,6 +21,10 @@ const App = () => {
 
   // sending form data to firebase
   useEffect(() => {
+    if (isInitial) {
+      isInitial = false
+      return
+    }
     dispatch(sendFormData(formData))
   }, [formData, dispatch])
 
