@@ -1,6 +1,6 @@
 import React from 'react'
 import './ContactHeading.scss'
-import { ReactComponent as DecorationSvg } from '../../assets/images/Decoration.svg'
+import { ReactComponent as DecorationSvg } from '../../../assets/images/Decoration.svg'
 
 export const ContactHeading = () => {
     return (
