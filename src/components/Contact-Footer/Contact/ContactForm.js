@@ -6,6 +6,7 @@ import { Notification } from '..'
 import { contactFormActions } from '../../../store/reducers/contactForm-slice'
 
 export const ContactForm = () => {
+    const [isShow, setIsShow] = useState(false)
     const dispatch = useDispatch()
     const notification = useSelector(state => state.ui.notification)
 
@@ -30,6 +31,10 @@ export const ContactForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(contactFormActions.addFormMessage(form))
+        setIsShow(true)
+        setTimeout(() => {
+            setIsShow(false)
+        }, 4000)
         setForm({
             id: '',
             name: '',
@@ -65,6 +70,7 @@ export const ContactForm = () => {
                             onChange={handleChange} />
                     </label>
                 </div>
+                {/* text area message */}
                 <label>
                     <div>Your message(max. 200 mark)</div>
                     <textarea
@@ -76,13 +82,14 @@ export const ContactForm = () => {
                         value={form.message}
                         onChange={handleChange} />
                 </label>
+                {/* button */}
                 <div className='flex flex-justify-end flex-justify-center-s'>
                     <button className='b-1 bg-col-8 b-col-1 p-3 p-l-8 p-r-8'
                         type="submit">Send</button>
                 </div>
             </form>
             {/* notification */}
-            {notification &&
+            {isShow &&
                 <Notification
                     status={notification.status}
                     title={notification.title}
