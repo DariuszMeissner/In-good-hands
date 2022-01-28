@@ -4,13 +4,11 @@ import './Notification.scss'
 export const Notification = (props) => {
 
     let cssClasses = [
-        "flex flex-column flex-align-center",
+        "notification flex flex-column flex-align-center",
         props.status === "success" ? 'col-9' : '' +
             props.status === "error" ? 'col-10' : '' +
                 props.status === "pending" ? 'col-1' : ''
     ]
-
-
 
     return (
         <>

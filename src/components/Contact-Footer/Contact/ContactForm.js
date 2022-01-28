@@ -6,16 +6,16 @@ import { Notification } from '..'
 import { contactFormActions } from '../../../store/reducers/contactForm-slice'
 
 export const ContactForm = () => {
-    const [isShow, setIsShow] = useState(false)
     const dispatch = useDispatch()
     const notification = useSelector(state => state.ui.notification)
-
+    const [isShow, setIsShow] = useState(false)
     const [form, setForm] = useState({
-        id: '',
-        name: '',
-        email: '',
-        message: '',
+        id: '', name: '', email: '', message: '',
     })
+    const [valNameLength, setValNameLength] = useState(false)
+    const [valNameWord, setValNameWord] = useState(false)
+    const [valEmail, setValEmail] = useState(false)
+    const [valMessage, setValMessage] = useState(false)
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -28,27 +28,69 @@ export const ContactForm = () => {
         })
     }
 
+    const handleName = () => {
+        (form.name.length < 3) ? setValNameLength(true) : setValNameLength(false)
+        form.name.includes(' ') ? setValNameWord(true) : setValNameWord(false)
+    }
+
+    const handleMessage = () => {
+        form.message.length < 60 ? setValMessage(true) : setValMessage(false);
+    }
+
+    const handleEmail = () => {
+        (form.email.match(/\S+@\S+\.\S+/) || form.email.length === 0) ? setValEmail(false) : setValEmail(true)
+    }
+
+    const validation = () => {
+        return (valMessage || valNameLength || valNameWord || valEmail)
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(contactFormActions.addFormMessage(form))
-        setIsShow(true)
-        setTimeout(() => {
-            setIsShow(false)
-        }, 4000)
-        setForm({
-            id: '',
-            name: '',
-            email: '',
-            message: ''
-        })
+
+        if (validation()) {
+            if (valNameLength) {
+                console.log('krótkie imię');
+            }
+            if (valNameWord) {
+                console.log('imię nie jest jednym wyrazem');
+            }
+            if (valMessage) {
+                console.log(`zbyt krótka wiadomość ${form.message.length}`);
+            }
+            if (valEmail) {
+                console.log(`błędny adres email`);
+            }
+            return
+        } else {
+            dispatch(contactFormActions.addFormMessage(form))
+            setIsShow(true)
+            setTimeout(() => {
+                setIsShow(false)
+            }, 4000)
+            setForm({
+                id: '',
+                name: '',
+                email: '',
+                message: ''
+            })
+            return
+        }
+
     }
 
     return (
         <>
+            {/* notification */}
+            {isShow &&
+                <Notification
+                    status={notification.status}
+                    title={notification.title}
+                    message={notification.message} />}
             {/* contact form */}
             <form className='form flex flex-column'
-                onSubmit={handleSubmit}>
-
+                onSubmit={handleSubmit}
+                noValidate>
                 {/* name and email */}
                 <div className='flex m-b-8'>
                     <label className='m-r-2'>
@@ -58,7 +100,8 @@ export const ContactForm = () => {
                             name='name'
                             type="text"
                             value={form.name}
-                            onChange={handleChange} />
+                            onChange={handleChange}
+                            onBlur={handleName} />
                     </label>
                     <label className='m-l-2'>
                         <div>Insert your email</div>
@@ -67,20 +110,23 @@ export const ContactForm = () => {
                             name="email"
                             type="email"
                             value={form.email}
-                            onChange={handleChange} />
+                            onChange={handleChange}
+                            onBlur={handleEmail} />
                     </label>
                 </div>
                 {/* text area message */}
                 <label>
-                    <div>Your message(max. 200 mark)</div>
+                    <div>Your message(min. 120 mark)</div>
                     <textarea
-                        maxlength="250"
                         rows="6"
                         id='message'
                         name='message'
                         className='c-s-12'
                         value={form.message}
-                        onChange={handleChange} />
+                        onChange={handleChange}
+                        onBlur={handleMessage} />
+                    {/* realtime number of marks */}
+                    <span className='fs-3'>Number of marks: {form.message.length}</span>
                 </label>
                 {/* button */}
                 <div className='flex flex-justify-end flex-justify-center-s'>
@@ -88,12 +134,6 @@ export const ContactForm = () => {
                         type="submit">Send</button>
                 </div>
             </form>
-            {/* notification */}
-            {isShow &&
-                <Notification
-                    status={notification.status}
-                    title={notification.title}
-                    message={notification.message} />}
         </>
     )
 }
