@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './ContactForm.scss'
 import uniqid from 'uniqid'
-import { Notification } from '..'
+import { Notification, ErrorMessage } from '..'
 import { contactFormActions } from '../../../store/reducers/contactForm-slice'
 
 export const ContactForm = () => {
@@ -10,7 +10,7 @@ export const ContactForm = () => {
     const notification = useSelector(state => state.ui.notification)
     const [isShow, setIsShow] = useState(false)
     const [form, setForm] = useState({
-        id: '', name: '', email: '', message: '',
+        id: '', name: '', email: '', message: ''
     })
     const [valNameLength, setValNameLength] = useState(false)
     const [valNameWord, setValNameWord] = useState(false)
@@ -49,18 +49,6 @@ export const ContactForm = () => {
         e.preventDefault()
 
         if (validation()) {
-            if (valNameLength) {
-                console.log('krótkie imię');
-            }
-            if (valNameWord) {
-                console.log('imię nie jest jednym wyrazem');
-            }
-            if (valMessage) {
-                console.log(`zbyt krótka wiadomość ${form.message.length}`);
-            }
-            if (valEmail) {
-                console.log(`błędny adres email`);
-            }
             return
         } else {
             dispatch(contactFormActions.addFormMessage(form))
@@ -76,7 +64,6 @@ export const ContactForm = () => {
             })
             return
         }
-
     }
 
     return (
@@ -88,7 +75,8 @@ export const ContactForm = () => {
                     title={notification.title}
                     message={notification.message} />}
             {/* contact form */}
-            <form className='form flex flex-column'
+            <form
+                className='form flex flex-column'
                 onSubmit={handleSubmit}
                 noValidate>
                 {/* name and email */}
@@ -102,6 +90,8 @@ export const ContactForm = () => {
                             value={form.name}
                             onChange={handleChange}
                             onBlur={handleName} />
+                        {/* validation error name */}
+                        {(valNameLength || valNameWord) && <ErrorMessage />}
                     </label>
                     <label className='m-l-2'>
                         <div>Insert your email</div>
@@ -112,11 +102,13 @@ export const ContactForm = () => {
                             value={form.email}
                             onChange={handleChange}
                             onBlur={handleEmail} />
+                        {/* validation error email */}
+                        {valEmail && <ErrorMessage />}
                     </label>
                 </div>
                 {/* text area message */}
                 <label>
-                    <div>Your message(min. 120 mark)</div>
+                    <div>Your message(min. 60 mark)</div>
                     <textarea
                         rows="6"
                         id='message'
@@ -125,10 +117,12 @@ export const ContactForm = () => {
                         value={form.message}
                         onChange={handleChange}
                         onBlur={handleMessage} />
+                    {/* validation error message */}
+                    {valMessage && <ErrorMessage />}
                     {/* realtime number of marks */}
                     <span className='fs-3'>Number of marks: {form.message.length}</span>
                 </label>
-                {/* button */}
+                {/* submit button */}
                 <div className='flex flex-justify-end flex-justify-center-s'>
                     <button className='b-1 bg-col-8 b-col-1 p-3 p-l-8 p-r-8'
                         type="submit">Send</button>
