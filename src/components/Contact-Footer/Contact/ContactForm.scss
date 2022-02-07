@@ -1,0 +1,32 @@
+@use "sass:map";
+@import "../../../styles/settings/colors";
+@import "../../../styles/atomic/px_to_rem";
+
+.form {
+  label {
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+  input,
+  textarea {
+    font-family: "Open Sans";
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid;
+    color: map.get($colors, 1);
+    padding: 0 !important;
+  }
+  input:focus,
+  textarea:focus {
+    border-bottom: 2px solid;
+  }
+
+  button {
+    transition: 0.5s;
+  }
+  button:hover {
+    transition: 0.5s;
+    background-color: map.get($colors, 1);
+    color: map.get($colors, 8);
+  }
+}
