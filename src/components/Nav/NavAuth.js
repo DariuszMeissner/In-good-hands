@@ -6,7 +6,7 @@ import { ClientSize } from '../UI/clientSize'
 export const NavAuth = () => {
     const { isS, isM, isL } = ClientSize()
     return (
-        <ul className='navAuth flex m-b-4 fs-3'>
+        <ul className='nav-auth flex m-b-4 fs-3'>
             {isS || isM || isL
                 ?
                 <>
@@ -16,7 +16,7 @@ export const NavAuth = () => {
 
                 :
                 <>
-                    <li className='b-col-2-l'><Link to="/sign-in">Sign In</Link></li>
+                    <li className='b-col-2-l'><Link to="/sign-in" className='p-l-3 p-r-3'>Sign In</Link></li>
                     <li className=''><Link to="/register">Register</Link></li>
                 </>
             }

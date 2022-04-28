@@ -1,0 +1,17 @@
+@use "sass:map";
+@import "../../styles/settings/colors";
+@import "../../styles/atomic/px_to_rem";
+
+.nav-auth li a {
+  color: map.get($colors, 1);
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+
+  &:hover {
+    transition: cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+    color: map.get($colors, 2);
+  }
+
+  &:active {
+    color: map.get($colors, 1);
+  }
+}
