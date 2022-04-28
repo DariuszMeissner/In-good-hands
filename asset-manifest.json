@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/In-good-hands/static/css/main.28a3f170.chunk.css",
+    "main.js": "/In-good-hands/static/js/main.fd017f88.chunk.js",
+    "main.js.map": "/In-good-hands/static/js/main.fd017f88.chunk.js.map",
+    "runtime-main.js": "/In-good-hands/static/js/runtime-main.8ac0cd0a.js",
+    "runtime-main.js.map": "/In-good-hands/static/js/runtime-main.8ac0cd0a.js.map",
+    "static/js/2.30f374b9.chunk.js": "/In-good-hands/static/js/2.30f374b9.chunk.js",
+    "static/js/2.30f374b9.chunk.js.map": "/In-good-hands/static/js/2.30f374b9.chunk.js.map",
+    "index.html": "/In-good-hands/index.html",
+    "static/css/main.28a3f170.chunk.css.map": "/In-good-hands/static/css/main.28a3f170.chunk.css.map",
+    "static/js/2.30f374b9.chunk.js.LICENSE.txt": "/In-good-hands/static/js/2.30f374b9.chunk.js.LICENSE.txt",
+    "static/media/Contact.scss": "/In-good-hands/static/media/Background-Contact-Form.655c5442.jpg",
+    "static/media/Decoration.aad75271.svg": "/In-good-hands/static/media/Decoration.aad75271.svg",
+    "static/media/Home-Hero-Image.0c4f237f.jpg": "/In-good-hands/static/media/Home-Hero-Image.0c4f237f.jpg",
+    "static/media/_main.scss": "/In-good-hands/static/media/sign-in.a0ee99a3.svg",
+    "static/media/People.2fa041c6.jpg": "/In-good-hands/static/media/People.2fa041c6.jpg",
+    "static/media/signature.c2a96569.svg": "/In-good-hands/static/media/signature.c2a96569.svg",
+    "static/media/HomeStatistics.scss": "/In-good-hands/static/media/statistics_Background.54dcd134.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8ac0cd0a.js",
+    "static/js/2.30f374b9.chunk.js",
+    "static/css/main.28a3f170.chunk.css",
+    "static/js/main.fd017f88.chunk.js"
+  ]
+}
