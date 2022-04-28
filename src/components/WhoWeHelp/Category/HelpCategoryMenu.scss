@@ -1,8 +1,23 @@
+@use "sass:map";
 @import "../../../styles/utils/breakpoints_mixin";
 @import "../../../styles/atomic/breakpoint_variables";
+@import "../../../styles/settings/colors";
+
+.help-category-menu li {
+  cursor: pointer;
+  background-color: map.get($colors, 8);
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+
+  &:hover {
+    transition: cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+    background-color: map.get($colors, 1);
+    color: map.get($colors, 8);
+  }
+}
 
 .categoryDesc {
   width: 100%;
+
   @include midmobile {
     width: 500px;
   }

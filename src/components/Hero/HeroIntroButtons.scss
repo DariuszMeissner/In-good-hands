@@ -1,0 +1,20 @@
+@use "sass:map";
+@import "../../styles/settings/colors";
+@import "../../styles/atomic/px_to_rem";
+
+.hero-intro-buttons span {
+  white-space: normal;
+  width: 130px;
+  line-height: 1.6rem;
+  color: map.get($colors, 1);
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+
+  &:hover {
+    color: map.get($colors, 2);
+    transition: cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+  }
+
+  &:active {
+    color: map.get($colors, 1);
+  }
+}

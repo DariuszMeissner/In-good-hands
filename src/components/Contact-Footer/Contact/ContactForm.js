@@ -38,7 +38,7 @@ export const ContactForm = () => {
     }
 
     const handleEmail = () => {
-        (form.email.match(/\S+@\S+\.\S+/) || form.email.length === 0) ? setValEmail(false) : setValEmail(true)
+        (form.email.match(/\S+@\S+\.\S+/)) ? setValEmail(false) : setValEmail(true)
     }
 
     const validation = () => {
@@ -91,7 +91,7 @@ export const ContactForm = () => {
                             onChange={handleChange}
                             onBlur={handleName} />
                         {/* validation error name */}
-                        {(valNameLength || valNameWord) && <ErrorMessage />}
+                        {(valNameLength || valNameWord) && <ErrorMessage message='Incorrect name, name must include at least 3 marks and no number' />}
                     </label>
                     <label className='m-l-2'>
                         <div>Insert your email</div>
@@ -103,7 +103,7 @@ export const ContactForm = () => {
                             onChange={handleChange}
                             onBlur={handleEmail} />
                         {/* validation error email */}
-                        {valEmail && <ErrorMessage />}
+                        {valEmail && <ErrorMessage message='Incorrect email' />}
                     </label>
                 </div>
                 {/* text area message */}
@@ -118,7 +118,7 @@ export const ContactForm = () => {
                         onChange={handleChange}
                         onBlur={handleMessage} />
                     {/* validation error message */}
-                    {valMessage && <ErrorMessage />}
+                    {valMessage && <ErrorMessage message='Please insert longer message' />}
                     {/* realtime number of marks */}
                     <span className='fs-3'>Number of marks: {form.message.length}</span>
                 </label>

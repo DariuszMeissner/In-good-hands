@@ -7,8 +7,12 @@
   font-family: $font-alt;
 }
 
-.categoryItem {
+.help-category-item {
+  color: map.get($colors, 1);
   border-bottom: 1px solid map.get($colors, 1);
   padding-bottom: 1rem;
   margin-bottom: 1rem;
+  &:hover {
+    color: map.get($colors, 1);
+  }
 }
